@@ -1,0 +1,33 @@
+.header {
+  background-color: #1a202c; /* მუქი ფონდი */
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header-nav-links {
+  display: flex;
+  list-style: none;
+  gap: 24px; /* ელემენტებს შორის სივრცე */
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #a0aec0; /* რბილი ფერის ცვლილება */
+  transition: color 0.2s; /* ნელი ცვლილება */
+}
