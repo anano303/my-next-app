@@ -18,7 +18,7 @@ const ProductsPage = () => {
 
   // const backEndUrl =
   //   "https://my-next-app-xvq2-ani-beroshvilis-projects.vercel.app/products";
-  const backEndUrl = "https://localhost:3003/products";
+  // const backEndUrl = "https://localhost:3003/products";
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -47,12 +47,15 @@ const ProductsPage = () => {
 
       if (editProductId) {
         response = await axios.put(
-          `${backEndUrl}/${editProductId}`,
+          `http://localhost:3003/products/${editProductId}`,
           newProduct
         );
         setEditProductId(null); // Reset edit mode
       } else {
-        response = await axios.post("${backEndUrl}", newProduct);
+        response = await axios.post(
+          "http://localhost:3003/products",
+          newProduct
+        );
       }
 
       setProducts((prev) => {
@@ -80,7 +83,7 @@ const ProductsPage = () => {
   const handleDelete = async (id: string) => {
     console.log("Deleting product ID:", id);
     try {
-      await axios.delete(`${backEndUrl}/${id}`);
+      await axios.delete(`http://localhost:3003/products/${id}`);
       setProducts((prev) => prev.filter((product) => product._id !== id)); // Remove deleted product from state
     } catch (error) {
       const axiosError = error as AxiosError;
