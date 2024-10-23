@@ -1,9 +1,9 @@
 .products-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 100vh;
   position: relative;
   padding: 20px;
   background-color: #1f1f1f;
@@ -15,9 +15,13 @@
   color: white;
   margin-right: 10px;
   margin-top: 15px;
-  border: 1px solid white;
-  opacity: 0.8;
-  transition: opacity 0.3s;
+}
+.productBoxes {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5vw;
 }
 
 .products-container button:hover {
@@ -34,6 +38,13 @@
   width: 100%; /* 100% სიგანით */
   max-width: 400px; /* მაქსიმალური სიგანე */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* ჩრდილი */
+}
+.product-card p {
+  border: 1px solid #464343;
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .product-card:hover {
@@ -85,7 +96,7 @@
 }
 
 .add-product-form button {
-  background-color: red; /* მწვანე ღილაკი */
+  background-color: #1eac3d; /* მწვანე ღილაკი */
   color: white;
   cursor: pointer;
 }

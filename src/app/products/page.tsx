@@ -1,9 +1,9 @@
-"use client"; // Make sure this component is a client component
+"use client";
 
 import { useEffect, useState } from "react";
 import { Product, getProducts } from "../services/api"; // Correct import
 import axios, { AxiosError } from "axios";
-import "./products.css";
+import "./Products.css";
 
 const ProductsPage = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -101,7 +101,7 @@ const ProductsPage = () => {
       <button
         className="buttonProduct"
         onClick={toggleForm}
-        style={{ zIndex: 20, background: "transparent" }}
+        style={{ zIndex: 20 }}
       >
         {showForm ? "Hide Form" : "Add New Product"}
       </button>
@@ -149,23 +149,34 @@ const ProductsPage = () => {
           </form>
         </>
       )}
-      {products.map((product) => (
-        <div className="product-card" key={product._id}>
-          <h2>{product.name}</h2>
-          <p>Price: ${product.price.toFixed(2)}</p>
-          <p>Model: {product.model}</p>
-          <p>Description: {product.description}</p>
-          <button className="buttonProduct" onClick={() => handleEdit(product)}>
-            Edit
-          </button>
-          <button
-            className="buttonProduct"
-            onClick={() => handleDelete(product._id)}
-          >
-            Delete
-          </button>
-        </div>
-      ))}
+      <div className="productBoxes">
+        {products.map((product) => (
+          <div className="product-card" key={product._id}>
+            <h2>{product.name}</h2>
+            <p>
+              <span>Price:</span> ${product.price.toFixed(2)}
+            </p>
+            <p>
+              <span>Model:</span> {product.model}
+            </p>
+            <p>
+              <span>Description:</span> {product.description}
+            </p>
+            <button
+              className="buttonProduct"
+              onClick={() => handleEdit(product)}
+            >
+              Edit
+            </button>
+            <button
+              className="buttonProduct"
+              onClick={() => handleDelete(product._id)}
+            >
+              Delete
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
