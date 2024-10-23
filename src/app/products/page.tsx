@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Product, getProducts } from "../services/api"; // Correct import
 import axios, { AxiosError } from "axios";
-import "./Products.css";
+import "./products.css";
 
 const ProductsPage = () => {
   const [products, setProducts] = useState<Product[]>([]);
