@@ -15,6 +15,7 @@
   color: white;
   margin-right: 10px;
   margin-top: 15px;
+  cursor: pointer;
 }
 .productBoxes {
   width: 100vw;
