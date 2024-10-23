@@ -11,6 +11,8 @@ export interface Product {
 
 // Function to get products from the server
 export async function getProducts(): Promise<Product[]> {
-  const response = await axios.get("http://localhost:3003/products");
+  const response = await axios.get(
+    "https://my-next-app-xvq2-ani-beroshvilis-projects.vercel.app/products"
+  );
   return response.data;
 }
